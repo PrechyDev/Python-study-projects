@@ -1,6 +1,7 @@
 # Write your code here
-def readflowers():
-    '''Create a function that opens the flowers.txt, reads every        line in it, and saves it as a dictionary
+def create_dict():
+    '''Create a function that opens the flowers.txt, reads every        
+        line in it, and saves it as a dictionary
     '''
     with open('flowers.txt') as f:
         flower_dict = {}
@@ -11,15 +12,18 @@ def readflowers():
         
         
 def match_flowers():
-    '''A function that takes user input (user's first name and last name) and parse the user input to identify the first letter of the first name. It should then use it to print the flower name with the same first letter (from dictionary created in the first function)
+    '''A function that takes user input (user's first name and last name) 
+    and parse the user input to identify the first letter of the first name. It should then use it to print
+    the flower name with the same first letter (from dictionary created in the first function)
     '''
     name= input('Enter your First [space] Last name only: ')
     
     first_letter = name.lower()[0]
     
     flower_dict = readflowers()
+    flower = flower_dict[first_letter]
     
-    print(flower_dict[first_letter])
+    print(("Unique flower name with the first letter: {}".format(flower))
 
 
 match_flowers()
